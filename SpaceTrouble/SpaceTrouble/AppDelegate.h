@@ -2,18 +2,23 @@
 //  AppDelegate.h
 //  SpaceTrouble
 //
-//  Created by Sven Aanesen on 07.09.12.
-//  Copyright (c) 2012 sven|way. All rights reserved.
+//  Created by Sven Aanesen on 09.09.12.
+//  Copyright __MyCompanyName__ 2012. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
+#import "cocos2d.h"
 
-@class ViewController;
+@interface AppController : NSObject <UIApplicationDelegate, CCDirectorDelegate>
+{
+	UIWindow *window_;
+	UINavigationController *navController_;
 
-@interface AppDelegate : UIResponder <UIApplicationDelegate>
+	CCDirectorIOS	*director_;							// weak ref
+}
 
-@property (strong, nonatomic) UIWindow *window;
-
-@property (strong, nonatomic) ViewController *viewController;
+@property (nonatomic, retain) UIWindow *window;
+@property (readonly) UINavigationController *navController;
+@property (readonly) CCDirectorIOS *director;
 
 @end
